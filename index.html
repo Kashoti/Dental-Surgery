@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrightSmile Dental Clinic</title>
+  <meta name="description" content="BrightSmile Dental Clinic – Quality family dentistry: checkups, cleaning, whitening, braces, implants and more. Book an appointment online." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#0ea5e9;         /* sky-500 */
+      --brand-700:#0369a1;     /* sky-800 */
+      --accent:#22c55e;        /* green-500 */
+      --ink:#0f172a;           /* slate-900 */
+      --muted:#475569;         /* slate-600 */
+      --bg:#f8fafc;            /* slate-50 */
+      --card:#ffffff;
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji","Segoe UI Emoji"; 
+      color:var(--ink); 
+      background:var(--bg);
+    }  
+
+    /* Navbar */
+    .navbar{
+      backdrop-filter:saturate(150%) blur(6px);
+    }
+
+    .navbar-brand{
+      font-weight:800; 
+      letter-spacing:.2px; 
+      color:var(--brand) !important;
+    }
+
+    .brand-dot{ 
+      width:.6rem; 
+      height:.6rem; 
+      display:inline-block; 
+      background:linear-gradient(135deg,var(--brand),var(--accent)); 
+      border-radius:50%; 
+      margin-left:.25rem; 
+      box-shadow:0 0 0 3px rgba(14,165,233,.15)
+    }
+
+    /* Hero */
+    .hero{
+      background: radial-gradient(80% 100% at 10% 10%, #e0f2fe 0%, transparent 60%),
+                  radial-gradient(70% 90% at 90% 10%, #dcfce7 0%, transparent 70%),
+                  linear-gradient(180deg,#fff, #f1f5f9);
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      gap:.5rem;
+      align-items:center;
+      padding:.4rem .7rem;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #e2e8f0;
+      color:#0f172a;
+      box-shadow:0 2px 8px rgba(15,23,42,.05);
+    }
+
+    /* Sections */
+    section{
+      padding:72px 0
+    }
+
+    .section-title{
+      font-weight:800; 
+      letter-spacing:-.02em;
+    }
+
+    .lead-muted{color:var(--muted)}
+
+
+    /* Cards */
+    .soft-card{
+      background:var(--card); 
+      border:1px solid #e5e7eb; 
+      border-radius:1.25rem; box-shadow:0 4px 24px rgba(2,6,23,.05);
+    }
+
+    .soft-card.hover-rise:hover{
+      transform:translateY(-4px); 
+      box-shadow:0 12px 36px rgba(2,6,23,.08);
+    }
+
+    .icon-badge{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(14,165,233,.1);
+    }
+
+    /* Pricing */
+    .price{
+      font-size:2.25rem;
+      font-weight:800;
+    }
+
+    /* Testimonials */
+    .testimonial-card{
+      border-radius:1.25rem;
+    }
+
+    /* Gallery */
+    .gallery img{
+      border-radius:16px;
+      object-fit:cover;
+      height:100%;
+    }
+
+    /* Footer */
+    .footer{
+      background:#0b1220; 
+      color:#e2e8f0;
+    }
+
+    .footer a{
+      color:#93c5fd;
+    }
+
+    /* Offcanvas (Appointment) */
+    .offcanvas{
+      border-top-left-radius:1rem;
+      border-bottom-left-radius:1rem;
+    }
+
+    /* Utilities */
+    .shadow-soft{
+      box-shadow:0 6px 24px rgba(2,6,23,.08);
+    }
+    .rounded-2xl{
+      border-radius:1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <i class="bi bi-emoji-smile me-2"></i>
+        HopeDentalSurgery <span class="brand-dot"></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2 ms-lg-3">
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#bookPanel" aria-controls="bookPanel">
+            <i class="bi bi-calendar2-check me-1"></i> Book Appointment
+          </button>
+        
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="hero-badge mb-3"><i class="bi bi-shield-check"></i><small>Gentle, safe & family‑friendly care</small></span>
+          <h1 class="display-5 fw-bold mt-2">Healthy teeth, happy life.</h1>
+          <p class="lead lead-muted">From routine checkups to advanced cosmetic dentistry — we make every visit comfortable and stress‑free.</p>
+          <div class="d-flex gap-2 mt-3">
+            <button class="btn btn-primary btn-lg shadow-soft" data-bs-toggle="offcanvas" data-bs-target="#bookPanel"><i class="bi bi-calendar2-check me-1"></i> Book now</button>
+            <a href="#services" class="btn btn-outline-secondary btn-lg"><i class="bi bi-search-heart me-1"></i> Explore services</a>
+          </div>
+          <div class="d-flex align-items-center gap-4 mt-4">
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-star-fill text-warning"></i><strong>4.9/5</strong><small class="text-muted"> patient rating</small></div>
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-clock-history text-primary"></i><small>Mon–Sat: 08:00–16:30</small></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/Dentist in Midtown Atlanta, GA - Intown Smile Studio.jpg" class="img-fluid rounded-2xl shadow-soft" alt="Smiling patient at the dentist" src="https://images.unsplash.com/photo-1588771930290-89f39e7b56a7?q=80&w=1600&auto=format&fit=crop" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST STRIP -->
+  <div class="bg-white border-top border-bottom">
+    <div class="container py-3">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md"><small class="text-muted"><i class="bi bi-award me-1"></i> Certified Dentists</small></div>
+        <div class="col-6 col-md"><small class="text-muted"><i class="bi bi-heart-pulse me-1"></i> Modern Equipment</small></div>
+        <div class="col-6 col-md"><small class="text-muted"><i class="bi bi-shield-lock me-1"></i> Strict Sterilization</small></div>
+        <div class="col-6 col-md"><small class="text-muted"><i class="bi bi-geo-alt me-1"></i> Central Location</small></div>
+        <div class="col-6 col-md"><small class="text-muted"><i class="bi bi-cash-coin me-1"></i> Affordable Plans</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">Our Dental Services</h2>
+        <p class="lead lead-muted">Comprehensive care for every smile.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- service item -->
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card hover-rise h-100 p-4">
+            <div class="icon-badge mb-3"><i class="bi bi-clipboard2-pulse fs-5 text-primary"></i></div>
+            <h5>Checkup & X‑rays</h5>
+            <p class="text-muted mb-0">Thorough exams using digital X‑rays to catch issues early and keep teeth healthy.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card hover-rise h-100 p-4">
+            <div class="icon-badge mb-3"><i class="bi bi-sparkles fs-5 text-primary"></i></div>
+            <h5>Cleaning & Polishing</h5>
+            <p class="text-muted mb-0">Professional cleaning to remove plaque and brighten your natural smile.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card hover-rise h-100 p-4">
+            <div class="icon-badge mb-3"><i class="bi bi-brightness-high fs-5 text-primary"></i></div>
+            <h5>Teeth Whitening</h5>
+            <p class="text-muted mb-0">Safe in‑clinic whitening for fast, visible results with minimal sensitivity.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card hover-rise h-100 p-4">
+            <div class="icon-badge mb-3"><i class="bi bi-emoji-smile fs-5 text-primary"></i></div>
+            <h5>Braces & Aligners</h5>
+            <p class="text-muted mb-0">Metal, ceramic, and clear aligners to straighten teeth comfortably.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card hover-rise h-100 p-4">
+            <div class="icon-badge mb-3"><i class="bi bi-nut fs-5 text-primary"></i></div>
+            <h5>Dental Implants</h5>
+            <p class="text-muted mb-0">Long‑lasting replacement for missing teeth with natural look and feel.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card hover-rise h-100 p-4">
+            <div class="icon-badge mb-3"><i class="bi bi-activity fs-5 text-primary"></i></div>
+            <h5>Root Canal Therapy</h5>
+            <p class="text-muted mb-0">Pain‑relief treatment to save infected teeth with gentle technique.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="bg-white">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">Transparent Pricing</h2>
+        <p class="lead lead-muted">Simple fees. No surprises. *Indicative — confirm at reception.*</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card h-100 p-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h5 class="mb-0">Basic Checkup</h5>
+              <span class="badge text-bg-light">30–40 min</span>
+            </div>
+            <div class="price">MWK 25,000</div>
+            <ul class="mt-3 text-muted small list-unstyled d-grid gap-2">
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Exam & consultation</li>
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Basic scaling</li>
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Treatment plan</li>
+            </ul>
+            <button class="btn btn-outline-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#bookPanel">Book this</button>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card h-100 p-4 border-primary border-2">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h5 class="mb-0">Cleaning & Polish</h5>
+              <span class="badge text-bg-primary">Popular</span>
+            </div>
+
+            <div class="price">MWK 45,000</div>
+            <ul class="mt-3 text-muted small list-unstyled d-grid gap-2">
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Full mouth scaling</li>
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Stain removal</li>
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Home care tips</li>
+            </ul>
+            <button class="btn btn-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#bookPanel">Book this</button>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card h-100 p-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h5 class="mb-0">Whitening (in‑clinic)</h5>
+              <span class="badge text-bg-light">60–90 min</span>
+            </div>
+
+            <div class="price">MWK 120,000</div>
+            <ul class="mt-3 text-muted small list-unstyled d-grid gap-2">
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Shade assessment</li>
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Sensitivity management</li>
+              <li><i class="bi bi-check-circle me-1 text-success"></i> Aftercare pack</li>
+            </ul>
+            <button class="btn btn-outline-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#bookPanel">Book this</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="lead lead-muted">Experienced, friendly professionals.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card h-100 p-4 text-center">
+            <img alt="Dentist" class="rounded-circle mb-3" width="96" height="96" src="https://images.unsplash.com/photo-1606335543042-57c525922933?q=80&w=400&auto=format&fit=crop" />
+            <h6 class="mb-0">Dr. T. Mbewe</h6>
+            <small class="text-muted">Principal Dentist • BDS, MSc</small>
+            <p class="small mt-3 mb-0 text-muted">15+ years of gentle, patient‑first care. Special interest in cosmetic dentistry.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card h-100 p-4 text-center">
+            <img alt="Orthodontist" class="rounded-circle mb-3" width="96" height="96" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&auto=format&fit=crop" />
+            <h6 class="mb-0">Dr. R. Banda</h6>
+            <small class="text-muted">Orthodontist</small>
+            <p class="small mt-3 mb-0 text-muted">Aligners & braces expert. Loves creating confident smiles.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="soft-card h-100 p-4 text-center">
+            <img alt="Hygienist" class="rounded-circle mb-3" width="96" height="96" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop" />
+            <h6 class="mb-0">Lucy N.</h6>
+            <small class="text-muted">Dental Hygienist</small>
+            <p class="small mt-3 mb-0 text-muted">Gentle cleanings and practical home‑care guidance.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+      
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="bg-white">
+
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">What Patients Say</h2>
+      </div>
+
+      <div id="testi" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="soft-card testimonial-card h-100 p-4">
+                  <div class="d-flex align-items-center mb-2 gap-2"><i class="bi bi-chat-quote fs-4 text-primary"></i><h6 class="mb-0">Very caring team</h6></div>
+                  <p class="mb-1">“I was nervous about my root canal, but the dentist explained everything and it was painless.”</p>
+                  <small class="text-muted">— Chifundo K.</small>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="soft-card testimonial-card h-100 p-4">
+                  <div class="d-flex align-items-center mb-2 gap-2"><i class="bi bi-chat-quote fs-4 text-primary"></i><h6 class="mb-0">Great results</h6></div>
+                  <p class="mb-1">“Whitening made a big difference before my graduation photos. Highly recommend.”</p>
+                  <small class="text-muted">— Memory P.</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-item">
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="soft-card testimonial-card h-100 p-4">
+                  <div class="d-flex align-items-center mb-2 gap-2"><i class="bi bi-chat-quote fs-4 text-primary"></i><h6 class="mb-0">Friendly clinic</h6></div>
+                  <p class="mb-1">“Reception was kind and booking was easy on WhatsApp. Clean and modern rooms.”</p>
+                  <small class="text-muted">— Kelvin J.</small>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="soft-card testimonial-card h-100 p-4">
+                  <div class="d-flex align-items-center mb-2 gap-2"><i class="bi bi-chat-quote fs-4 text-primary"></i><h6 class="mb-0">Kid‑friendly</h6></div>
+                  <p class="mb-1">“My daughter actually enjoyed her visit. The dentist is very patient with children.”</p>
+                  <small class="text-muted">— Thoko S.</small>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#testi" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testi" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+
+    <div class="container">
+      
+      <div class="text-center mb-4">
+        <h2 class="section-title">Clinic & Smiles</h2>
+        <p class="lead lead-muted">A peek into our space and results.</p>
+      </div>
+
+      <div class="row g-3 gallery">
+        <div class="col-6 col-md-4"><img class="w-100 h-100" alt="Clinic room" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"></div>
+        <div class="col-6 col-md-4"><img class="w-100 h-100" alt="Dental chair" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"></div>
+        <div class="col-6 col-md-4"><img class="w-100 h-100" alt="Smiling patient" src="images/What Types of Treatments Do General Dentists Provide_ - Bemis Family Dental https___bemisfamilydental_com_what-types-of-treatments-do-general-dentists-provide_.jpg"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-white">
+
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="accordion soft-card" id="faqAcc">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">Do you accept walk‑ins?</button></h2>
+          <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">Yes, but bookings are prioritized. We recommend reserving a slot via WhatsApp or the booking form.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">What payment methods do you accept?</button></h2>
+          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Cash, bank transfer, and mobile money. Insurance claims can be supported on request.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">Is teeth whitening safe?</button></h2>
+          <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes. We use dentist‑approved whitening with sensitivity control and aftercare advice.</div></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-6">
+          <div class="soft-card h-100 p-4">
+            <h3 class="section-title h4">Get in touch</h3>
+            <p class="text-muted">We are located in Blantyre CBD (replace with exact address).</p>
+            <div class="d-grid gap-2 small mb-3">
+              <div><i class="bi bi-geo-alt me-2 text-primary"></i><strong>Address:</strong> Victoria Ave, Blantyre, Malawi</div>
+              <div><i class="bi bi-telephone me-2 text-primary"></i><strong>Phone:</strong> <a href="tel:+265883449299">+265 883 449 299</a></div>
+              <div><i class="bi bi-envelope me-2 text-primary"></i><strong>Email:</strong> <a href="mailto:hello@brightsmile.mw">hello@HopeDentalSurgery.mw</a></div>
+              <div><i class="bi bi-clock me-2 text-primary"></i><strong>Hours:</strong> Mon–Thu 08:00–16:30</div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#bookPanel"><i class="bi bi-calendar-week me-1"></i> Book appointment</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="ratio ratio-4x3 rounded-2xl overflow-hidden shadow-soft">
+            <iframe title="Map" src="https://www.google.com/maps?q=Blantyre%2C%20Malawi&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer mt-5 pt-5 pb-4">
+
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <h5 class="fw-bold">HopeDental Surgery <span class="brand-dot" style="vertical-align:middle"></span></h5>
+          <p class="small text-opacity-75">Gentle, modern dentistry for the whole family. We focus on comfort, safety and results.</p>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h6 class="fw-bold">Quick links</h6>
+          <ul class="list-unstyled small d-grid gap-2">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h6 class="fw-bold">Book now</h6>
+          <p class="small text-opacity-75">Reserve a slot in minutes. We’ll confirm by WhatsApp or phone.</p>
+         <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#bookPanel" aria-controls="bookPanel">
+            <i class="bi bi-calendar2-check me-1"></i> Book Appointment
+          </button>
+        </div>
+
+      </div>
+      <hr class="border-secondary border-opacity-25 my-4">
+      <div class="d-flex justify-content-between small text-opacity-75">
+        <span>© <span id="year"></span> Hope Dental Clinic</span>
+        <span>Made with ❤️ in Malawi</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- OFFCANVAS: BOOK APPOINTMENT -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="bookPanel" aria-labelledby="bookPanelLabel">
+
+    <div class="offcanvas-header">
+      <h5 id="bookPanelLabel" class="mb-0"><i class="bi bi-calendar2-check me-2 text-primary"></i>Book Appointment</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <form id="bookForm" action="submit_booking.php" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone" name="phone" required>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" class="form-control" id="time" name="time" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="service" class="form-label">Service</label>
+          <select id="service" class="form-select" name="service" required>
+            <option value="">Choose service...</option>
+            <option>Dental Cleaning</option>
+            <option>Tooth Extraction</option>
+            <option>Teeth Whitening</option>
+            <option>Root Canal</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="notes" class="form-label">Additional Notes</label>
+          <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-primary w-100 mt-3" type="submit">Submit Booking</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // ✅ 1. Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ✅ 2. Set the minimum date to today
+    const dateInput = document.getElementById('date');
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+    // ✅ 3. Submit form normally to database (no WhatsApp or email)
+    const form = document.getElementById('bookForm');
+    form.addEventListener('submit', function (e) {
+      // Optional: check all required fields
+      const requiredFields = ['name', 'phone', 'service', 'date', 'time'];
+      for (let field of requiredFields) {
+        if (!form[field].value.trim()) {
+          e.preventDefault();
+          alert("Please fill all required fields before submitting.");
+          return;
+        }
+      }
+      // Allow the form to submit normally to submit_booking.php
+    });
+ </script>
+
+ <script>
+  // Function to create a dismissible alert
+  function showAlert(message, type = 'success', duration = 4000) {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.role = 'alert';
+    alertDiv.style.position = 'fixed';
+    alertDiv.style.top = '20px';
+    alertDiv.style.right = '20px';
+    alertDiv.style.zIndex = '9999';
+    alertDiv.innerHTML = `
+      ${message}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    document.body.appendChild(alertDiv);
+
+    // Auto-remove after duration
+    setTimeout(() => {
+      alertDiv.remove();
+    }, duration);
+  }
+
+  // Check URL for success query
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === '1') {
+    showAlert('Booking submitted successfully! We will contact you soon.', 'success', 5000);
+
+    // Remove query param from URL (clean URL)
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
+
+
+
+</body>
+</html>
